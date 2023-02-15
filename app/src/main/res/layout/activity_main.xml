@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.binding.twowaybinding.MainActivityViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+        <CheckBox
+            android:id="@+id/check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Check here"
+            android:checked="@={viewmodel.isChecked}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/text"
+            android:text="@={viewmodel.text}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:id="@+id/rg"
+            app:paymentMethod="@={viewmodel.paymentMethod}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbOffline"
+                android:text="Offline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rbOnline"
+                android:text="Online"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+
+        <Spinner
+            android:id="@+id/countrySpinner"
+            countries="@{viewmodel.allCountry}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg"
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
