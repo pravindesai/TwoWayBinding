@@ -2,6 +2,7 @@
 
 <layout>
     <data>
+        <import type="com.binding.twowaybinding.User"/>
         <variable
             name="viewmodel"
             type="com.binding.twowaybinding.MainActivityViewModel" />
@@ -19,7 +20,7 @@
             android:id="@+id/check"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Check here"
+            android:text="@string/check_here"
             android:checked="@={viewmodel.isChecked}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +46,7 @@
 
             <RadioButton
                 android:id="@+id/rbOffline"
-                android:text="Offline"
+                android:text="@string/offline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -60,11 +61,23 @@
 
         <Spinner
             android:id="@+id/countrySpinner"
-            countries="@{viewmodel.allCountry}"
+            allItems="@{viewmodel.allCountry}"
+            selectedItem="@={viewmodel.selectedCountry}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rg"
             android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/userSpinner"
+            allItems="@{viewmodel.allUsers}"
+            selectedItem="@={viewmodel.selectedUser}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countrySpinner"
+            android:layout_marginTop="20dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 

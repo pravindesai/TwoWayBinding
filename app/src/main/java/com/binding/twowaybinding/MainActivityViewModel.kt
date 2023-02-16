@@ -11,8 +11,12 @@ class MainActivityViewModel:ViewModel(){
     val text:ObservableField<String> = ObservableField<String>()
     val paymentMethod:ObservableField<PaymentMethod> = ObservableField<PaymentMethod>()
 
-    val selectedCountry:ObservableField<String> = ObservableField<String>()
     val allCountry:ObservableField<List<String>> = ObservableField<List<String>>(listOf("India","US", "Nepal"))
+    var selectedCountry:ObservableField<String> = ObservableField<String>()
+
+
+    val allUsers:ObservableField<List<User>> = ObservableField<List<User>>()
+    var selectedUser:ObservableField<User> = ObservableField<User>()
 
     init {
 
@@ -39,6 +43,13 @@ class MainActivityViewModel:ViewModel(){
             Observable.OnPropertyChangedCallback() {
             override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
                 Log.e("***","text :${selectedCountry.get()}")
+            }
+        })
+
+        selectedUser.addOnPropertyChangedCallback(object :
+            Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                Log.e("***","text :${selectedUser.get()}")
             }
         })
 

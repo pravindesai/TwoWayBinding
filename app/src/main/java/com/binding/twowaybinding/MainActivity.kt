@@ -17,4 +17,15 @@ class MainActivity : AppCompatActivity() {
         }
         setContentView(binding.root)
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        val users = listOf<User>(
+            User(1,"Pravin"),
+            User(2,"Akash"),
+            User(3,"Vishal"),
+        )
+        activityViewModel.allUsers.set(users)
+    }
 }
