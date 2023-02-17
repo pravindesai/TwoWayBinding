@@ -12,9 +12,6 @@ import androidx.databinding.ObservableField
 
 object SpinnerBindingAdapter {
 
-    @JvmStatic
-    @BindingConversion
-    fun userName(user: User): String = user.name
 
     @JvmStatic
     @BindingAdapter(

@@ -14,6 +14,8 @@ class MainActivityViewModel:ViewModel(){
     val allCountry:ObservableField<List<String>> = ObservableField<List<String>>(listOf("India","US", "Nepal"))
     var selectedCountry:ObservableField<String> = ObservableField<String>()
 
+    var counterValue:ObservableField<Int> = ObservableField<Int>()
+
 
     val allUsers:ObservableField<List<User>> = ObservableField<List<User>>()
     var selectedUser:ObservableField<User> = ObservableField<User>()
@@ -50,6 +52,13 @@ class MainActivityViewModel:ViewModel(){
             Observable.OnPropertyChangedCallback() {
             override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
                 Log.e("***","text :${selectedUser.get()}")
+            }
+        })
+
+        counterValue.addOnPropertyChangedCallback(object :
+            Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                Log.e("***","text :${counterValue.get()}")
             }
         })
 
