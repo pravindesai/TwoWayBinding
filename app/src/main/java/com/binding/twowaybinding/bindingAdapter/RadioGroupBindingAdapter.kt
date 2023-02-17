@@ -1,18 +1,19 @@
-package com.binding.twowaybinding
+package com.binding.twowaybinding.bindingAdapter
 
 import android.widget.RadioGroup
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
+import com.binding.twowaybinding.R
 
 object RadioGroupBindingAdapter {
 
     @JvmStatic
     @BindingAdapter("paymentMethod")
-    fun RadioGroup.getPaymentMethod(selectedPaymentMethod:PaymentMethod?){
+    fun RadioGroup.getPaymentMethod(selectedPaymentMethod: PaymentMethod?){
         val selected = when(selectedPaymentMethod){
-            PaymentMethod.OFFLINE-> R.id.rbOffline
-            PaymentMethod.ONLINE-> R.id.rbOnline
+            PaymentMethod.OFFLINE -> R.id.rbOffline
+            PaymentMethod.ONLINE -> R.id.rbOnline
             else-> null
         }
         selected?.let {

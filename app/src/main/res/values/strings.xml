@@ -2,4 +2,5 @@
     <string name="app_name">TwoWayBinding</string>
     <string name="check_here">Check here</string>
     <string name="offline">Offline</string>
+    <string name="event_name">event name</string>
 </resources>

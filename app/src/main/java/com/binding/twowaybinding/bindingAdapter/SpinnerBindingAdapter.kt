@@ -1,11 +1,10 @@
-package com.binding.twowaybinding
+package com.binding.twowaybinding.bindingAdapter
 
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingConversion
 import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
 import androidx.databinding.ObservableField

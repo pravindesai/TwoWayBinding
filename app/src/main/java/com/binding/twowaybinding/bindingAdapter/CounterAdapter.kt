@@ -1,4 +1,4 @@
-package com.binding.twowaybinding
+package com.binding.twowaybinding.bindingAdapter
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

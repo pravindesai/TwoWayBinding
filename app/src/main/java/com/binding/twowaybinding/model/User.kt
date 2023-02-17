@@ -1,4 +1,4 @@
-package com.binding.twowaybinding
+package com.binding.twowaybinding.model
 
 data class User(val id:Int, val name: String)
 {
